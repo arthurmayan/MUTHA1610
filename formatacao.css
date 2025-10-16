@@ -7,28 +7,26 @@
 
 /* ===== Tipografia ===== */
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Arial', sans-serif;
     font-size: 16px;
     color: #333;
     background-color: #f7f7f7;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* ===== Header ===== */
 .l-cabecalho-portal {
     background-color: #009e49;
     color: white;
-    padding: 10px 0;
-}
-
-.l-cabecalho-portal a {
-    color: white;
-    text-decoration: none;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-camara {
-    display: inline-block;
-    width: 150px;
+    display: block;
+    width: 180px;
     height: 50px;
     background: url('https://www.camara.leg.br/tema/logo.png') no-repeat center;
     background-size: contain;
@@ -43,6 +41,7 @@ body {
     display: flex;
     list-style: none;
     padding-left: 0;
+    margin: 0;
 }
 
 .menu-global__item-temas,
@@ -51,9 +50,12 @@ body {
 .menu-global__item-atvlegislativa,
 .menu-global__item-comunicacao,
 .menu-global__item-transprestcontas {
-    padding: 10px 15px;
+    position: relative;
+    padding: 12px 18px;
     color: white;
     cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
 }
 
 .menu-global__item-temas:hover,
@@ -66,24 +68,28 @@ body {
 }
 
 /* ===== Dropdown ===== */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #007a33;
-    list-style: none;
-    padding: 10px 0;
-    min-width: 200px;
-    z-index: 999;
-}
-
 .nav-item.dropdown:hover .dropdown-menu {
     display: block;
 }
 
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #007a33;
+    min-width: 220px;
+    z-index: 999;
+    border-radius: 4px;
+    padding: 5px 0;
+}
+
 .dropdown-item a {
     color: white;
-    padding: 8px 15px;
+    text-decoration: none;
     display: block;
+    padding: 8px 15px;
+    transition: background 0.3s;
 }
 
 .dropdown-item a:hover {
@@ -93,33 +99,38 @@ body {
 /* ===== Breadcrumbs ===== */
 .breadcrumb {
     background-color: #e9ecef;
-    padding: 8px 15px;
+    padding: 10px 15px;
     list-style: none;
     display: flex;
+    margin-top: 10px;
+    border-radius: 4px;
 }
 
 .breadcrumb li + li:before {
     content: ">";
-    padding: 0 8px;
+    padding: 0 10px;
     color: #555;
 }
 
-/* ===== Conteúdo ===== */
+/* ===== Conteúdo principal ===== */
 .conteudo-portal {
     background-color: white;
-    padding: 20px;
+    max-width: 1100px;
     margin: 20px auto;
-    max-width: 1000px;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
 }
 
 .documentFirstHeading {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .titulo-landing {
     font-size: 22px;
+    font-weight: 600;
     margin-bottom: 15px;
 }
 
@@ -129,22 +140,40 @@ body {
 
 .ementa {
     background-color: #f1f1f1;
-    padding: 10px 15px;
-    border-left: 4px solid #009e49;
-    margin-bottom: 15px;
+    padding: 12px 18px;
+    border-left: 5px solid #009e49;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+/* ===== Botões ===== */
+button, .btn {
+    background-color: #009e49;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: #007a33;
 }
 
 /* ===== Rodapé ===== */
 .rodape-portal {
     background-color: #333;
-    color: white;
-    padding: 20px 0;
+    color: #ccc;
+    padding: 30px 20px;
     font-size: 14px;
 }
 
 .rodape-portal a {
     color: #ccc;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .rodape-portal a:hover {
@@ -162,15 +191,10 @@ body {
     display: inline-block;
 }
 
-/* ===== Botões e interações ===== */
-button {
-    cursor: pointer;
-}
-
 /* ===== Links internos ===== */
 .vejaTambem ul {
     list-style: disc;
-    padding-left: 20px;
+    padding-left: 25px;
 }
 
 .vejaTambem li a {
@@ -180,4 +204,24 @@ button {
 
 .vejaTambem li a:hover {
     text-decoration: underline;
+}
+
+/* ===== Responsividade ===== */
+@media(max-width: 900px) {
+    .menu-global .navbar-nav {
+        flex-direction: column;
+    }
+
+    .menu-global__item-temas,
+    .menu-global__item-institucional,
+    .menu-global__item-deputados,
+    .menu-global__item-atvlegislativa,
+    .menu-global__item-comunicacao,
+    .menu-global__item-transprestcontas {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+    }
 }
