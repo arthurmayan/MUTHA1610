@@ -14,23 +14,224 @@ body {
     line-height: 1.6;
 }
 
-/* ===== Header ===== */
-.l-cabecalho-portal {
+/* ==========================
+   Cabeçalho Portal Câmara
+========================== */
+
+/* Header geral */
+header.l-cabecalho-portal {
+    width: 100%;
     background-color: #009e49;
-    color: white;
-    padding: 10px 20px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Acesso direto (atalhos) */
+.acesso-direto {
+    list-style: none;
+    margin: 0;
+    padding: 5px 10px;
+    display: flex;
+    gap: 10px;
+    background-color: #006f35;
+}
+
+.acesso-direto__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.acesso-direto__link:hover {
+    text-decoration: underline;
+}
+
+/* Topo do header */
+.nav-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
 }
 
+/* Logo */
 .logo-camara {
     display: block;
-    width: 180px;
-    height: 50px;
-    background: url('Captura de tela de 2025-10-16 16-39-50.png') no-repeat center;
+    width: 200px;
+    height: 60px;
+    background-image: url('https://www.camara.leg.br/tema/logo-camara.png');
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
 }
+
+/* Links de apoio */
+.links-apoio {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.links-apoio__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.links-apoio__link:hover {
+    text-decoration: underline;
+}
+
+/* Idiomas */
+.lista-idiomas {
+    position: relative;
+}
+
+.botao-idioma-topo {
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.l-lista-idiomas {
+    display: none;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: #fff;
+    color: #000;
+    list-style: none;
+    padding: 5px 0;
+    min-width: 100px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.lista-idiomas:hover .l-lista-idiomas {
+    display: block;
+}
+
+.l-lista-idiomas__item a {
+    display: block;
+    padding: 5px 10px;
+    color: #000;
+    text-decoration: none;
+}
+
+.l-lista-idiomas__item a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Menu principal */
+.menu-global {
+    background-color: #007a3d;
+}
+
+.menu-global--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.menu-global--btnmenu,
+.menu-global--btnsearch {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-nav .nav-item {
+    position: relative;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 5px;
+    display: block;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item:hover > .nav-link {
+    background-color: #006f35;
+}
+
+/* Dropdowns */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #007a3d;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 180px;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item a {
+    display: block;
+    padding: 8px 12px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown-item a:hover {
+    background-color: #006f35;
+}
+
+/* Busca */
+.box-search {
+    display: none;
+    padding: 10px 20px;
+    background-color: #006f35;
+}
+
+.box-search__campo {
+    width: 100%;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .dropdown-menu {
+        position: static;
+    }
+
+    .logo-camara {
+        width: 150px;
+        height: 50px;
+    }
+}
+
 
 
 /* ===== Menu principal ===== */
