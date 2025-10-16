@@ -1,29 +1,11 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fff;
-}
-
-/* Cabeçalho */
+/* Cabeçalho principal */
 .l-cabecalho-portal {
     background-color: #009e49;
     color: #fff;
-    padding: 10px 0;
+    font-size: 0.9em;
 }
 
-.l-cabecalho-portal a {
-    color: #fff;
-    text-decoration: none;
-}
-
+/* Topo: logo e links */
 .nav-top {
     display: flex;
     justify-content: space-between;
@@ -31,48 +13,69 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 10px 0;
 }
 
-/* Logo usando URL direta do site da Câmara */
-.nav-top .logo-camara {
+.logo-camara {
     display: block;
-    width: 200px;
+    width: 220px;
     height: 50px;
     background: url('https://www.camara.leg.br/internet/sitios/images/logo-cd.svg') no-repeat center/contain;
-    text-indent: -9999px; /* para acessibilidade */
+    text-indent: -9999px;
 }
 
-/* Links de apoio, órgãos parceiros e idiomas */
-.links-apoio,
-.orgaos-parceiros,
-.lista-idiomas {
+/* Links do topo */
+.top-links {
     list-style: none;
     display: flex;
     gap: 15px;
     align-items: center;
 }
 
-.links-apoio li a,
-.orgaos-parceiros li a,
-.lista-idiomas li button {
+.top-links li a,
+.top-links li button {
     color: #fff;
-    font-size: 0.9em;
     text-decoration: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 5px 8px;
+    font-size: 0.9em;
 }
 
-.links-apoio li a:hover,
-.orgaos-parceiros li a:hover,
-.lista-idiomas li button:hover {
+.top-links li a:hover,
+.top-links li button:hover {
     text-decoration: underline;
+}
+
+/* Botão de idiomas */
+.botao-idioma-topo {
+    border: 1px solid #fff;
+    border-radius: 3px;
+    padding: 4px 8px;
+    transition: 0.3s;
+}
+
+.botao-idioma-topo:hover {
+    background-color: #fff;
+    color: #009e49;
 }
 
 /* Menu global */
 .menu-global {
     background-color: #007a33;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav li {
+    position: relative;
 }
 
 .menu-global__item-temas,
@@ -97,15 +100,12 @@ body {
     background-color: #005a27;
 }
 
-.navbar-nav {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-}
-
+/* Dropdown menu */
 .dropdown-menu {
     display: none;
     position: absolute;
+    top: 100%;
+    left: 0;
     background-color: #fff;
     color: #333;
     list-style: none;
@@ -114,108 +114,11 @@ body {
     z-index: 100;
 }
 
-.nav-item:hover .dropdown-menu {
+.navbar-nav li:hover .dropdown-menu {
     display: block;
 }
 
-/* Breadcrumbs */
-.breadcrumb {
-    background-color: #f1f1f1;
-    padding: 10px;
-    list-style: none;
-}
-
-.breadcrumb-item {
-    display: inline;
-}
-
-.breadcrumb-item + .breadcrumb-item:before {
-    content: ">";
-    margin: 0 5px;
-    color: #555;
-}
-
-/* Conteúdo */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.documentFirstHeading {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-}
-
-.titulo-landing {
-    font-size: 1.5em;
-    margin: 15px 0;
-}
-
-.textoNorma {
-    margin: 20px 0;
-}
-
-.textoNorma p {
-    margin-bottom: 15px;
-}
-
-.ementa {
-    background-color: #f9f9f9;
-    border-left: 4px solid #009e49;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-
-/* Rodapé */
-.rodape-portal {
-    background-color: #f1f1f1;
-    color: #333;
-    padding: 20px 0;
-    font-size: 0.9em;
-}
-
-.rodape-portal a {
-    color: #009e49;
-    text-decoration: none;
-}
-
-.rodape-portal a:hover {
-    text-decoration: underline;
-}
-
-.rodape-portal-links__lista {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-.rodape-portal-info__texto span {
-    display: block;
-}
-
-/* Botões idioma */
-.botao-idioma-topo {
-    background-color: #fff;
-    color: #009e49;
-    border: 1px solid #009e49;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 0.9em;
-    border-radius: 3px;
-}
-
-.botao-idioma-topo:hover {
-    background-color: #009e49;
-    color: #fff;
-}
-
-/* Links sociais */
-.rodape-portal-links--redes-sociais .rodape-portal-links__item {
-    display: inline-block;
-}
-
-/* Responsivo simples */
+/* Responsivo */
 @media (max-width: 768px) {
     .nav-top {
         flex-direction: column;
@@ -225,11 +128,10 @@ body {
 
     .navbar-nav {
         flex-direction: column;
+        width: 100%;
     }
 
-    .links-apoio,
-    .orgaos-parceiros,
-    .lista-idiomas {
+    .top-links {
         flex-direction: column;
         gap: 5px;
     }
