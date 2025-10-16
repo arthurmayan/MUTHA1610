@@ -1,0 +1,179 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Cabeçalho */
+.l-cabecalho-portal {
+    background-color: #009e49;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.l-cabecalho-portal a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-top .logo-camara {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    background: url('https://www.camara.leg.br/tema/logo-camara.png') no-repeat center/contain;
+}
+
+.links-apoio,
+.orgaos-parceiros,
+.lista-idiomas {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+/* Menu global */
+.menu-global {
+    background-color: #007a33;
+    padding: 0;
+}
+
+.menu-global__item-temas,
+.menu-global__item-institucional,
+.menu-global__item-deputados,
+.menu-global__item-atvlegislativa,
+.menu-global__item-comunicacao,
+.menu-global__item-transprestcontas {
+    color: #fff;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+}
+
+.menu-global__item-temas:hover,
+.menu-global__item-institucional:hover,
+.menu-global__item-deputados:hover,
+.menu-global__item-atvlegislativa:hover,
+.menu-global__item-comunicacao:hover,
+.menu-global__item-transprestcontas:hover {
+    background-color: #005a27;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    color: #333;
+    list-style: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+    background-color: #f1f1f1;
+    padding: 10px;
+    list-style: none;
+}
+
+.breadcrumb-item {
+    display: inline;
+}
+
+.breadcrumb-item + .breadcrumb-item:before {
+    content: ">";
+    margin: 0 5px;
+    color: #555;
+}
+
+/* Conteúdo */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.documentFirstHeading {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.titulo-landing {
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+.textoNorma {
+    margin: 20px 0;
+}
+
+.textoNorma p {
+    margin-bottom: 15px;
+}
+
+.ementa {
+    background-color: #f9f9f9;
+    border-left: 4px solid #009e49;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+/* Rodapé */
+.rodape-portal {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+.rodape-portal a {
+    color: #009e49;
+    text-decoration: none;
+}
+
+.rodape-portal-links__lista {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.rodape-portal-info__texto span {
+    display: block;
+}
+
+/* Botões idioma */
+.botao-idioma-topo {
+    background-color: #fff;
+    color: #009e49;
+    border: 1px solid #009e49;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Links sociais */
+.rodape-portal-links--redes-sociais .rodape-portal-links__item {
+    display: inline-block;
+}
