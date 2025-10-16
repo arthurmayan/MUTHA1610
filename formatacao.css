@@ -1,47 +1,78 @@
-/* ===== Reset básico ===== */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ===== Tipografia ===== */
 body {
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    color: #333;
-    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
+    color: #333;
+    background-color: #fff;
 }
 
-/* ===== Header ===== */
+/* Cabeçalho */
 .l-cabecalho-portal {
     background-color: #009e49;
-    color: white;
-    padding: 10px 20px;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.l-cabecalho-portal a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.logo-camara {
+/* Logo usando URL direta do site da Câmara */
+.nav-top .logo-camara {
     display: block;
-    width: 180px;
+    width: 200px;
     height: 50px;
-    background: url('https://www.camara.leg.br/tema/logo.png') no-repeat center;
-    background-size: contain;
+    background: url('https://www.camara.leg.br/internet/sitios/images/logo-cd.svg') no-repeat center/contain;
+    text-indent: -9999px; /* para acessibilidade */
 }
 
-/* ===== Menu principal ===== */
+/* Links de apoio, órgãos parceiros e idiomas */
+.links-apoio,
+.orgaos-parceiros,
+.lista-idiomas {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.links-apoio li a,
+.orgaos-parceiros li a,
+.lista-idiomas li button {
+    color: #fff;
+    font-size: 0.9em;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 8px;
+}
+
+.links-apoio li a:hover,
+.orgaos-parceiros li a:hover,
+.lista-idiomas li button:hover {
+    text-decoration: underline;
+}
+
+/* Menu global */
 .menu-global {
     background-color: #007a33;
-}
-
-.menu-global .navbar-nav {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
 }
 
 .menu-global__item-temas,
@@ -50,12 +81,11 @@ body {
 .menu-global__item-atvlegislativa,
 .menu-global__item-comunicacao,
 .menu-global__item-transprestcontas {
-    position: relative;
+    color: #fff;
     padding: 12px 18px;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .menu-global__item-temas:hover,
@@ -64,74 +94,66 @@ body {
 .menu-global__item-atvlegislativa:hover,
 .menu-global__item-comunicacao:hover,
 .menu-global__item-transprestcontas:hover {
-    background-color: #00592b;
+    background-color: #005a27;
 }
 
-/* ===== Dropdown ===== */
-.nav-item.dropdown:hover .dropdown-menu {
-    display: block;
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
 }
 
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #007a33;
-    min-width: 220px;
-    z-index: 999;
-    border-radius: 4px;
-    padding: 5px 0;
-}
-
-.dropdown-item a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 8px 15px;
-    transition: background 0.3s;
-}
-
-.dropdown-item a:hover {
-    background-color: #00592b;
-}
-
-/* ===== Breadcrumbs ===== */
-.breadcrumb {
-    background-color: #e9ecef;
-    padding: 10px 15px;
+    background-color: #fff;
+    color: #333;
     list-style: none;
-    display: flex;
-    margin-top: 10px;
-    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 100;
 }
 
-.breadcrumb li + li:before {
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+    background-color: #f1f1f1;
+    padding: 10px;
+    list-style: none;
+}
+
+.breadcrumb-item {
+    display: inline;
+}
+
+.breadcrumb-item + .breadcrumb-item:before {
     content: ">";
-    padding: 0 10px;
+    margin: 0 5px;
     color: #555;
 }
 
-/* ===== Conteúdo principal ===== */
-.conteudo-portal {
-    background-color: white;
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 6px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+/* Conteúdo */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .documentFirstHeading {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-size: 1.8em;
+    margin-bottom: 15px;
 }
 
 .titulo-landing {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 15px;
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+.textoNorma {
+    margin: 20px 0;
 }
 
 .textoNorma p {
@@ -139,89 +161,76 @@ body {
 }
 
 .ementa {
-    background-color: #f1f1f1;
-    padding: 12px 18px;
-    border-left: 5px solid #009e49;
-    margin-bottom: 20px;
-    border-radius: 4px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #009e49;
+    padding: 10px;
+    margin-bottom: 15px;
 }
 
-/* ===== Botões ===== */
-button, .btn {
-    background-color: #009e49;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-button:hover, .btn:hover {
-    background-color: #007a33;
-}
-
-/* ===== Rodapé ===== */
+/* Rodapé */
 .rodape-portal {
-    background-color: #333;
-    color: #ccc;
-    padding: 30px 20px;
-    font-size: 14px;
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 20px 0;
+    font-size: 0.9em;
 }
 
 .rodape-portal a {
-    color: #ccc;
+    color: #009e49;
     text-decoration: none;
-    transition: color 0.3s;
 }
 
 .rodape-portal a:hover {
-    color: white;
+    text-decoration: underline;
 }
 
 .rodape-portal-links__lista {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
     gap: 15px;
 }
 
-.rodape-portal-links__item {
+.rodape-portal-info__texto span {
+    display: block;
+}
+
+/* Botões idioma */
+.botao-idioma-topo {
+    background-color: #fff;
+    color: #009e49;
+    border: 1px solid #009e49;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 3px;
+}
+
+.botao-idioma-topo:hover {
+    background-color: #009e49;
+    color: #fff;
+}
+
+/* Links sociais */
+.rodape-portal-links--redes-sociais .rodape-portal-links__item {
     display: inline-block;
 }
 
-/* ===== Links internos ===== */
-.vejaTambem ul {
-    list-style: disc;
-    padding-left: 25px;
-}
+/* Responsivo simples */
+@media (max-width: 768px) {
+    .nav-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
 
-.vejaTambem li a {
-    color: #009e49;
-    text-decoration: none;
-}
-
-.vejaTambem li a:hover {
-    text-decoration: underline;
-}
-
-/* ===== Responsividade ===== */
-@media(max-width: 900px) {
-    .menu-global .navbar-nav {
+    .navbar-nav {
         flex-direction: column;
     }
 
-    .menu-global__item-temas,
-    .menu-global__item-institucional,
-    .menu-global__item-deputados,
-    .menu-global__item-atvlegislativa,
-    .menu-global__item-comunicacao,
-    .menu-global__item-transprestcontas {
-        width: 100%;
-    }
-
-    .dropdown-menu {
-        position: static;
+    .links-apoio,
+    .orgaos-parceiros,
+    .lista-idiomas {
+        flex-direction: column;
+        gap: 5px;
     }
 }
