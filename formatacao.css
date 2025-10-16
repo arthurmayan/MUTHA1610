@@ -1,54 +1,48 @@
-/* Reset básico */
+/* ===== Reset básico ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== Tipografia ===== */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
     color: #333;
-    background-color: #fff;
+    background-color: #f7f7f7;
+    line-height: 1.5;
 }
 
-/* Cabeçalho */
+/* ===== Header ===== */
 .l-cabecalho-portal {
     background-color: #009e49;
-    color: #fff;
+    color: white;
     padding: 10px 0;
 }
 
 .l-cabecalho-portal a {
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
 
-.nav-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-top .logo-camara {
+.logo-camara {
     display: inline-block;
-    width: 200px;
+    width: 150px;
     height: 50px;
-    background: url('https://www.camara.leg.br/tema/logo-camara.png') no-repeat center/contain;
+    background: url('https://www.camara.leg.br/tema/logo.png') no-repeat center;
+    background-size: contain;
 }
 
-.links-apoio,
-.orgaos-parceiros,
-.lista-idiomas {
-    list-style: none;
-    display: flex;
-    gap: 10px;
-}
-
-/* Menu global */
+/* ===== Menu principal ===== */
 .menu-global {
     background-color: #007a33;
-    padding: 0;
+}
+
+.menu-global .navbar-nav {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
 }
 
 .menu-global__item-temas,
@@ -57,10 +51,9 @@ body {
 .menu-global__item-atvlegislativa,
 .menu-global__item-comunicacao,
 .menu-global__item-transprestcontas {
-    color: #fff;
     padding: 10px 15px;
-    display: block;
-    text-decoration: none;
+    color: white;
+    cursor: pointer;
 }
 
 .menu-global__item-temas:hover,
@@ -69,65 +62,65 @@ body {
 .menu-global__item-atvlegislativa:hover,
 .menu-global__item-comunicacao:hover,
 .menu-global__item-transprestcontas:hover {
-    background-color: #005a27;
+    background-color: #00592b;
 }
 
-.navbar-nav {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-}
-
+/* ===== Dropdown ===== */
 .dropdown-menu {
     display: none;
     position: absolute;
-    background-color: #fff;
-    color: #333;
+    background-color: #007a33;
     list-style: none;
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 10px 0;
+    min-width: 200px;
+    z-index: 999;
 }
 
-.nav-item:hover .dropdown-menu {
+.nav-item.dropdown:hover .dropdown-menu {
     display: block;
 }
 
-/* Breadcrumbs */
+.dropdown-item a {
+    color: white;
+    padding: 8px 15px;
+    display: block;
+}
+
+.dropdown-item a:hover {
+    background-color: #00592b;
+}
+
+/* ===== Breadcrumbs ===== */
 .breadcrumb {
-    background-color: #f1f1f1;
-    padding: 10px;
+    background-color: #e9ecef;
+    padding: 8px 15px;
     list-style: none;
+    display: flex;
 }
 
-.breadcrumb-item {
-    display: inline;
-}
-
-.breadcrumb-item + .breadcrumb-item:before {
+.breadcrumb li + li:before {
     content: ">";
-    margin: 0 5px;
+    padding: 0 8px;
     color: #555;
 }
 
-/* Conteúdo */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+/* ===== Conteúdo ===== */
+.conteudo-portal {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1000px;
 }
 
 .documentFirstHeading {
-    font-size: 1.8em;
-    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .titulo-landing {
-    font-size: 1.5em;
-    margin: 15px 0;
-}
-
-.textoNorma {
-    margin: 20px 0;
+    font-size: 22px;
+    margin-bottom: 15px;
 }
 
 .textoNorma p {
@@ -135,45 +128,56 @@ body {
 }
 
 .ementa {
-    background-color: #f9f9f9;
+    background-color: #f1f1f1;
+    padding: 10px 15px;
     border-left: 4px solid #009e49;
-    padding: 10px;
     margin-bottom: 15px;
 }
 
-/* Rodapé */
+/* ===== Rodapé ===== */
 .rodape-portal {
-    background-color: #f1f1f1;
-    color: #333;
+    background-color: #333;
+    color: white;
     padding: 20px 0;
-    font-size: 0.9em;
+    font-size: 14px;
 }
 
 .rodape-portal a {
-    color: #009e49;
+    color: #ccc;
     text-decoration: none;
+}
+
+.rodape-portal a:hover {
+    color: white;
 }
 
 .rodape-portal-links__lista {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
 }
 
-.rodape-portal-info__texto span {
-    display: block;
+.rodape-portal-links__item {
+    display: inline-block;
 }
 
-/* Botões idioma */
-.botao-idioma-topo {
-    background-color: #fff;
-    color: #009e49;
-    border: 1px solid #009e49;
-    padding: 5px 10px;
+/* ===== Botões e interações ===== */
+button {
     cursor: pointer;
 }
 
-/* Links sociais */
-.rodape-portal-links--redes-sociais .rodape-portal-links__item {
-    display: inline-block;
+/* ===== Links internos ===== */
+.vejaTambem ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.vejaTambem li a {
+    color: #009e49;
+    text-decoration: none;
+}
+
+.vejaTambem li a:hover {
+    text-decoration: underline;
 }
