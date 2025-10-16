@@ -1,81 +1,48 @@
-/* Cabeçalho principal */
-.l-cabecalho-portal {
-    background-color: #009e49;
-    color: #fff;
-    font-size: 0.9em;
+/* ===== Reset básico ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Topo: logo e links */
-.nav-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+/* ===== Tipografia ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #f7f7f7;
+    line-height: 1.5;
+}
+
+/* ===== Header ===== */
+.l-cabecalho-portal {
+    background-color: #009e49;
+    color: white;
     padding: 10px 0;
 }
 
-.logo-camara {
-    display: block;
-    width: 220px;
-    height: 50px;
-    background: url('https://www.camara.leg.br/internet/sitios/images/logo-cd.svg') no-repeat center/contain;
-    text-indent: -9999px;
-}
-
-/* Links do topo */
-.top-links {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.top-links li a,
-.top-links li button {
-    color: #fff;
+.l-cabecalho-portal a {
+    color: white;
     text-decoration: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px 8px;
-    font-size: 0.9em;
 }
 
-.top-links li a:hover,
-.top-links li button:hover {
-    text-decoration: underline;
+.logo-camara {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background: url('https://www.camara.leg.br/tema/logo.png') no-repeat center;
+    background-size: contain;
 }
 
-/* Botão de idiomas */
-.botao-idioma-topo {
-    border: 1px solid #fff;
-    border-radius: 3px;
-    padding: 4px 8px;
-    transition: 0.3s;
-}
-
-.botao-idioma-topo:hover {
-    background-color: #fff;
-    color: #009e49;
-}
-
-/* Menu global */
+/* ===== Menu principal ===== */
 .menu-global {
     background-color: #007a33;
 }
 
-.navbar-nav {
+.menu-global .navbar-nav {
     display: flex;
-    flex-wrap: wrap;
     list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar-nav li {
-    position: relative;
+    padding-left: 0;
 }
 
 .menu-global__item-temas,
@@ -84,11 +51,9 @@
 .menu-global__item-atvlegislativa,
 .menu-global__item-comunicacao,
 .menu-global__item-transprestcontas {
-    color: #fff;
-    padding: 12px 18px;
-    display: block;
-    text-decoration: none;
-    transition: background-color 0.3s;
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
 }
 
 .menu-global__item-temas:hover,
@@ -97,42 +62,122 @@
 .menu-global__item-atvlegislativa:hover,
 .menu-global__item-comunicacao:hover,
 .menu-global__item-transprestcontas:hover {
-    background-color: #005a27;
+    background-color: #00592b;
 }
 
-/* Dropdown menu */
+/* ===== Dropdown ===== */
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    color: #333;
+    background-color: #007a33;
     list-style: none;
-    padding: 10px;
-    border: 1px solid #ccc;
-    z-index: 100;
+    padding: 10px 0;
+    min-width: 200px;
+    z-index: 999;
 }
 
-.navbar-nav li:hover .dropdown-menu {
+.nav-item.dropdown:hover .dropdown-menu {
     display: block;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .nav-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
+.dropdown-item a {
+    color: white;
+    padding: 8px 15px;
+    display: block;
+}
 
-    .navbar-nav {
-        flex-direction: column;
-        width: 100%;
-    }
+.dropdown-item a:hover {
+    background-color: #00592b;
+}
 
-    .top-links {
-        flex-direction: column;
-        gap: 5px;
-    }
+/* ===== Breadcrumbs ===== */
+.breadcrumb {
+    background-color: #e9ecef;
+    padding: 8px 15px;
+    list-style: none;
+    display: flex;
+}
+
+.breadcrumb li + li:before {
+    content: ">";
+    padding: 0 8px;
+    color: #555;
+}
+
+/* ===== Conteúdo ===== */
+.conteudo-portal {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+.documentFirstHeading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.titulo-landing {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.textoNorma p {
+    margin-bottom: 15px;
+}
+
+.ementa {
+    background-color: #f1f1f1;
+    padding: 10px 15px;
+    border-left: 4px solid #009e49;
+    margin-bottom: 15px;
+}
+
+/* ===== Rodapé ===== */
+.rodape-portal {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.rodape-portal a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.rodape-portal a:hover {
+    color: white;
+}
+
+.rodape-portal-links__lista {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.rodape-portal-links__item {
+    display: inline-block;
+}
+
+/* ===== Botões e interações ===== */
+button {
+    cursor: pointer;
+}
+
+/* ===== Links internos ===== */
+.vejaTambem ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.vejaTambem li a {
+    color: #009e49;
+    text-decoration: none;
+}
+
+.vejaTambem li a:hover {
+    text-decoration: underline;
 }
