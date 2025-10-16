@@ -47,6 +47,53 @@ header.l-cabecalho-portal {
     text-decoration: underline;
 }
 
+/* Container geral dos links de apoio no rodapé */
+.rodape-portal-links--apoio {
+    background-color: #f5f5f5; /* fundo claro */
+    padding: 20px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Lista dos links */
+.rodape-portal-links__lista {
+    list-style: none; /* remove bullets */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* se muitos links, quebram linha */
+    justify-content: center; /* centraliza horizontalmente */
+    gap: 15px; /* espaçamento entre links */
+}
+
+/* Cada item da lista */
+.rodape-portal-links__item {
+    margin: 0;
+}
+
+/* Link em si */
+.rodape-portal-links__link {
+    text-decoration: none;
+    color: #009e49; /* verde Câmara */
+    font-weight: 500;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+/* Hover / foco */
+.rodape-portal-links__link:hover,
+.rodape-portal-links__link:focus {
+    color: #007737; /* verde mais escuro */
+    text-decoration: underline;
+}
+
+/* Responsivo: em telas pequenas, empilha os links */
+@media (max-width: 768px) {
+    .rodape-portal-links__lista {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
 /* Topo do header */
 .nav-top {
     display: flex;
